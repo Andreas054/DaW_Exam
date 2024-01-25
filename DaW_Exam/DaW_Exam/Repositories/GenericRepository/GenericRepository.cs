@@ -29,14 +29,16 @@ namespace DaW_Exam.Repositories.GenericRepository
         }
 
         // create
-        public void Create(TEntity entity)
+        public bool Create(TEntity entity)
         {
             _table.Add(entity);
+            return Save();
         }
 
         public async Task CreateAsync(TEntity entity)
         {
             await _table.AddAsync(entity);
+            SaveAsync(entity);
         }
 
         public void CreateRange(IEnumerable<TEntity> entities)

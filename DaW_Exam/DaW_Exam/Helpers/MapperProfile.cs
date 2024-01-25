@@ -1,4 +1,6 @@
 ﻿using AutoMapper;
+using DaW_Exam.Models.DTOs;
+using DaW_Exam.Models.Many_to_Many;
 
 namespace DaW_Exam.Helpers
 {
@@ -6,8 +8,8 @@ namespace DaW_Exam.Helpers
     {
         public MapperProfile()
         {
-            //CreateMap<User, UserDTO>();
-            //CreateMap<UserDTO, User>();
+            CreateMap<Autor, AutorDTO>();
+            CreateMap<AutorDTO, Autor>();
         }
     }
 }

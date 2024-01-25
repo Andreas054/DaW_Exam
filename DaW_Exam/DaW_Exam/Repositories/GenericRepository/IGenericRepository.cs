@@ -5,10 +5,11 @@ namespace DaW_Exam.Repositories.GenericRepository
     public interface IGenericRepository<TEntity> where TEntity : BaseEntity
     {
         // get all data
+        List<TEntity> GetAll();
         Task<List<TEntity>> GetAllAsync();
 
         // create
-        void Create(TEntity entity);
+        bool Create(TEntity entity);
         Task CreateAsync(TEntity entity);
         void CreateRange(IEnumerable<TEntity> entities);
         Task CreateRangeAsync(IEnumerable<TEntity> entities);
